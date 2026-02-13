@@ -1,0 +1,66 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 0.25in;
+}
+
+.page {
+  margin: 0 auto;
+  width: 210mm;
+  display: grid;
+  grid-template-columns: repeat(3, 2.7in);
+  grid-template-rows: repeat(3, 3.7in);
+  justify-content: center;
+  align-content: start;
+}
+
+.card {
+  width: 2.7in;
+  height: 3.7in;
+  position: relative;
+  background-image: url("Haldir's wedding ring.png");
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
+.card::before, .card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+}
+.card::before {
+  top: 0.1in;
+  bottom: 0.1in;
+  left: 0;
+  right: 0;
+  border-top: 0.5pt solid rgba(255, 255, 255, 0.6);
+  border-bottom: 0.5pt solid rgba(255, 255, 255, 0.6);
+}
+.card::after {
+  left: 0.1in;
+  right: 0.1in;
+  top: 0;
+  bottom: 0;
+  border-left: 0.5pt solid rgba(255, 255, 255, 0.6);
+  border-right: 0.5pt solid rgba(255, 255, 255, 0.6);
+}
+.card .content {
+  position: absolute;
+  top: 0.1in;
+  left: 0.1in;
+  width: 2.5in;
+  height: 3.5in;
+  padding: 0.1in;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}/*# sourceMappingURL=style.css.map */

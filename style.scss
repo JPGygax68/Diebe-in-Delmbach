@@ -1,0 +1,98 @@
+// --- 1. Variables ---
+$card-w: 2.5in;
+$card-h: 3.5in;
+$bleed: 0.1in;
+$safe-gap: 0.25in; // This is now just a spacer, not a clip boundary
+
+// Total Card Size
+$total-w: $card-w + (2 * $bleed); 
+$total-h: $card-h + (2 * $bleed);
+
+// --- 2. The Fix: Zero out the @page clipping ---
+@page {
+  size: A4;
+  margin: 0; // Removes the browser's clipping "window"
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  // This padding replaces the @page margin safely
+  padding-top: $safe-gap; 
+}
+
+.page {
+  margin: 0 auto; // Centers the grid on the sheet
+  width: 210mm;
+  display: grid;
+  grid-template-columns: repeat(3, #{$total-w});
+  grid-template-rows: repeat(3, #{$total-h});
+  justify-content: center;
+  align-content: start; // Starts after the body's padding
+}
+// --- 4. The Card (The Bleed Layer) ---
+.card {
+  width: $total-w;
+  height: $total-h;
+  position: relative;
+  background-image: url("Haldir's wedding ring.png");
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+
+    // THE CROP MARKS
+  // We create 4 small lines that point to the corners of the 2.5x3.5 area
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  // Horizontal Crop Marks
+  &::before {
+    top: $bleed; 
+    bottom: $bleed;
+    left: 0;
+    right: 0;
+    // Draws a 0.05" line at the start and end of the trim height
+    border-top: 0.5pt solid rgba(255,255,255,0.6);
+    border-bottom: 0.5pt solid rgba(255,255,255,0.6);
+  }
+
+  // Vertical Crop Marks
+  &::after {
+    left: $bleed;
+    right: $bleed;
+    top: 0;
+    bottom: 0;
+    // Draws a 0.05" line at the start and end of the trim width
+    border-left: 0.5pt solid rgba(255,255,255,0.6);
+    border-right: 0.5pt solid rgba(255,255,255,0.6);
+  }
+  
+  // Note: These borders will "cross" at the corners. 
+  // The parts outside the 2.5x3.5 area are your guides.
+
+  .content {
+    position: absolute;
+    top: $bleed;
+    left: $bleed;
+    width: $card-w;
+    height: $card-h;
+    
+    // The "Safe Zone" - 0.1" inside the trim line
+    padding: 0.1in;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    
+    // Optional: Visual guide for the trim line
+    // border: 1px dashed rgba(255,255,255,0.4); 
+  }
+}
