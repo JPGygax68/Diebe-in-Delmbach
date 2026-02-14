@@ -1,8 +1,11 @@
 // --- 1. Variables ---
 $card-w: 2.5in;
 $card-h: 3.5in;
-$bleed: 0.1in;
+$bleed: 0.05in;
 $safe-gap: 0.25in; // This is now just a spacer, not a clip boundary
+$tick-len: calc($bleed);
+$tick-thickness: 0.5pt;
+$printer-margin: 5mm; // Adjust based on your printer's non-printable area
 
 // Total Card Size
 $total-w: $card-w + (2 * $bleed); 
@@ -15,6 +18,7 @@ $total-h: $card-h + (2 * $bleed);
 }
 
 body {
+  font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
   margin: 0;
   padding: 0;
   // This padding replaces the @page margin safely
@@ -22,23 +26,30 @@ body {
 }
 
 .page {
-  margin: 0 auto; // Centers the grid on the sheet
-  width: 210mm;
+  background-color: violet; // for debugging
+  margin: auto auto; // Centers the grid on the sheet
   display: grid;
   grid-template-columns: repeat(3, #{$total-w});
   grid-template-rows: repeat(3, #{$total-h});
-  justify-content: center;
-  align-content: start; // Starts after the body's padding
+  // THIS is the "magic" for distribution
+  justify-content: space-between; // Distributes extra horizontal space
+  align-content: space-between;   // Distributes extra vertical space
+  overflow: visible;
+
+  // MANDATORY: The container must be larger than the content
+  // A4 is 297mm. If your rows are 3.5in each, you have extra space.
+  width: calc(210mm - (#{$printer-margin} * 2));
+  height: calc(297mm - (#{$printer-margin} * 2));
 }
 // --- 4. The Card (The Bleed Layer) ---
 .card {
   width: $total-w;
   height: $total-h;
   position: relative;
-  background-image: url("Haldir's wedding ring.png");
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
+  overflow: visible; // Ensure crop marks can extend outside
 
     // THE CROP MARKS
   // We create 4 small lines that point to the corners of the 2.5x3.5 area
@@ -47,30 +58,49 @@ body {
     position: absolute;
     pointer-events: none;
     z-index: 10;
+    overflow: visible;
   }
 
-  // Horizontal Crop Marks
+  // 1. Vertical Ticks (Top and Bottom edges)
   &::before {
-    top: $bleed; 
-    bottom: $bleed;
-    left: 0;
-    right: 0;
-    // Draws a 0.05" line at the start and end of the trim height
-    border-top: 0.5pt solid rgba(255,255,255,0.6);
-    border-bottom: 0.5pt solid rgba(255,255,255,0.6);
+    left: $bleed; 
+    width: $card-w;
+    
+    // 1. PUSH THE BOX UP: Start the element ABOVE the card
+    top: -#{$tick-len}; 
+    // 2. STRETCH THE BOX: Card height + ticks on both sides
+    height: calc(100% + #{$tick-len * 2}); 
+
+    background: none;
+    border-left: #{$tick-thickness} solid #000;
+    border-right: #{$tick-thickness} solid #000;
+
+    // 3. NEW CLIP-PATH: Everything is now inside the box (0 to 100%)
+    clip-path: polygon(
+      0 0, 100% 0, 100% #{$tick-len}, 0 #{$tick-len}, // The Top Tick
+      0 calc(100% - #{$tick-len}), 100% calc(100% - #{$tick-len}), 100% 100%, 0 100% // The Bottom Tick
+    );
   }
 
-  // Vertical Crop Marks
+  // 2. Horizontal Ticks (Left and Right edges)
   &::after {
-    left: $bleed;
-    right: $bleed;
-    top: 0;
-    bottom: 0;
-    // Draws a 0.05" line at the start and end of the trim width
-    border-left: 0.5pt solid rgba(255,255,255,0.6);
-    border-right: 0.5pt solid rgba(255,255,255,0.6);
-  }
-  
+    top: $bleed;
+    height: $card-h;
+    
+    // 1. PUSH THE BOX LEFT: Start the element to the LEFT of the card
+    left: -#{$tick-len}; // Start the element to the LEFT of the card
+    // 2. STRETCH THE BOX: Card width + ticks on both sides
+    width: calc(100% + #{$tick-len * 2}); // Stretch it to cover the card + ticks on both sides
+
+    background: none;
+    border-top: #{$tick-thickness} solid #000;
+    border-bottom: #{$tick-thickness} solid #000;
+    
+    // 3. NEW CLIP-PATH: Everything is now inside the box (0 to 100%)
+    clip-path: polygon(
+      0 0, $tick-len 0, $tick-len 100%, 0 100%, calc(100% - $tick-len) 0, 100% 0, 100% 100%, calc(100% - $tick-len) 100%
+    );
+  }  
   // Note: These borders will "cross" at the corners. 
   // The parts outside the 2.5x3.5 area are your guides.
 
@@ -80,9 +110,10 @@ body {
     left: $bleed;
     width: $card-w;
     height: $card-h;
+    overflow: visible;
     
     // The "Safe Zone" - 0.1" inside the trim line
-    padding: 0.1in;
+    padding: 0.12in;
     box-sizing: border-box;
     
     display: flex;
@@ -94,5 +125,9 @@ body {
     
     // Optional: Visual guide for the trim line
     // border: 1px dashed rgba(255,255,255,0.4); 
+  }
+
+  &.haldirs_ring {
+      background-image: url("Haldir's wedding ring.png");
   }
 }

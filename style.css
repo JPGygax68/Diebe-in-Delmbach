@@ -3,59 +3,69 @@
   margin: 0;
 }
 body {
+  font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
   margin: 0;
   padding: 0;
   padding-top: 0.25in;
 }
 
 .page {
-  margin: 0 auto;
-  width: 210mm;
+  background-color: violet;
+  margin: auto auto;
   display: grid;
-  grid-template-columns: repeat(3, 2.7in);
-  grid-template-rows: repeat(3, 3.7in);
-  justify-content: center;
-  align-content: start;
+  grid-template-columns: repeat(3, 2.6in);
+  grid-template-rows: repeat(3, 3.6in);
+  justify-content: space-between;
+  align-content: space-between;
+  overflow: visible;
+  width: calc(210mm - 5mm * 2);
+  height: calc(297mm - 5mm * 2);
 }
 
 .card {
-  width: 2.7in;
-  height: 3.7in;
+  width: 2.6in;
+  height: 3.6in;
   position: relative;
-  background-image: url("Haldir's wedding ring.png");
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
+  overflow: visible;
 }
 .card::before, .card::after {
   content: "";
   position: absolute;
   pointer-events: none;
   z-index: 10;
+  overflow: visible;
 }
 .card::before {
-  top: 0.1in;
-  bottom: 0.1in;
-  left: 0;
-  right: 0;
-  border-top: 0.5pt solid rgba(255, 255, 255, 0.6);
-  border-bottom: 0.5pt solid rgba(255, 255, 255, 0.6);
+  left: 0.05in;
+  width: 2.5in;
+  top: -0.05in;
+  height: calc(100% + 0.1in);
+  background: none;
+  border-left: 0.5pt solid #000;
+  border-right: 0.5pt solid #000;
+  clip-path: polygon(0 0, 100% 0, 100% 0.05in, 0 0.05in, 0 calc(100% - 0.05in), 100% calc(100% - 0.05in), 100% 100%, 0 100%);
 }
 .card::after {
-  left: 0.1in;
-  right: 0.1in;
-  top: 0;
-  bottom: 0;
-  border-left: 0.5pt solid rgba(255, 255, 255, 0.6);
-  border-right: 0.5pt solid rgba(255, 255, 255, 0.6);
+  top: 0.05in;
+  height: 3.5in;
+  left: -0.05in;
+  width: calc(100% + 0.1in);
+  background: none;
+  border-top: 0.5pt solid #000;
+  border-bottom: 0.5pt solid #000;
+  clip-path: polygon(0 0, 0.05in 0, 0.05in 100%, 0 100%, calc(100% - 0.05in) 0, 100% 0, 100% 100%, calc(100% - 0.05in) 100%);
 }
 .card .content {
   position: absolute;
-  top: 0.1in;
-  left: 0.1in;
+  top: 0.05in;
+  left: 0.05in;
   width: 2.5in;
   height: 3.5in;
-  padding: 0.1in;
+  overflow: visible;
+  padding: 0.12in;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -63,4 +73,7 @@ body {
   align-items: center;
   color: white;
   text-shadow: 1px 1px 3px black;
+}
+.card.haldirs_ring {
+  background-image: url("Haldir's wedding ring.png");
 }/*# sourceMappingURL=style.css.map */
