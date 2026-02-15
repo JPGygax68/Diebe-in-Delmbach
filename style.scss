@@ -4,7 +4,7 @@ $card-h: 3.5in;
 $bleed: 0.05in;
 $safe-gap: 0.25in; // This is now just a spacer, not a clip boundary
 $tick-len: $bleed;
-$tick-thickness: 0.5pt;
+$tick-thick: 0.5pt;
 $printer-margin: 5mm; // Adjust based on your printer's non-printable area
 
 // Total Card Size
@@ -26,7 +26,7 @@ body {
 }
 
 .page {
-  background-color: lighten(pink, 10%); // for debugging
+  background-color: lightpink; // for debugging
   margin: auto auto; // Centers the grid on the sheet
   display: grid;
   grid-template-columns: repeat(3, #{$total-w});
@@ -40,91 +40,81 @@ body {
   // A4 is 297mm. If your rows are 3.5in each, you have extra space.
   width: calc(210mm - (#{$printer-margin} * 2));
   height: calc(297mm - (#{$printer-margin} * 2));
+
+  position: relative
 }
-// --- 4. The Card (The Bleed Layer) ---
-.card {
+
+.box {
+  position: relative;
   width: $total-w;
   height: $total-h;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
-  overflow: visible; // Ensure crop marks can extend outside
+  background: transparent; // CRITICAL: No background here!
 
-  background-color: white;
-
-    // THE CROP MARKS
-  // We create 4 small lines that point to the corners of the 2.5x3.5 area
-  &::before, &::after {
-    content: "";
-    position: absolute;
-    pointer-events: none;
-    z-index: 10;
-    overflow: visible;
-  }
-
-  // 1. Vertical Ticks (Top and Bottom edges)
+  // LAYER 1: The Horizontal Ticks
   &::before {
-    left: $bleed; 
-    width: $card-w;
-    
-    // 1. PUSH THE BOX UP: Start the element ABOVE the card
-    top: -#{$tick-len}; 
-    // 2. STRETCH THE BOX: Card height + ticks on both sides
-    height: calc(100% + #{$tick-len * 2}); 
-
-    background: none;
-    border-left: #{$tick-thickness} solid #000;
-    border-right: #{$tick-thickness} solid #000;
-
-    // 3. NEW CLIP-PATH: Everything is now inside the box (0 to 100%)
-    clip-path: polygon(
-      0 0, 100% 0, 100% #{$tick-len}, 0 #{$tick-len}, // The Top Tick
-      0 calc(100% - #{$tick-len}), 100% calc(100% - #{$tick-len}), 100% 100%, 0 100% // The Bottom Tick
-    );
-  }
-
-  // 2. Horizontal Ticks (Left and Right edges)
-  &::after {
+    content: "";
+    //background-color: #0af8;
+    position: absolute;
+    // Stretch horizontally past the card edges
+    left: #{-$tick-len};
+    width: calc(100% + 2*$tick-len);
+    // Align exactly with the top/bottom trim lines
     top: $bleed;
     height: $card-h;
     
-    // 1. PUSH THE BOX LEFT: Start the element to the LEFT of the card
-    left: -#{$tick-len}; // Start the element to the LEFT of the card
-    // 2. STRETCH THE BOX: Card width + ticks on both sides
-    width: calc(100% + #{$tick-len * 2}); // Stretch it to cover the card + ticks on both sides
-
-    background: none;
-    border-top: #{$tick-thickness} solid #000;
-    border-bottom: #{$tick-thickness} solid #000;
+    border-top: $tick-thick solid black;
+    border-bottom: $tick-thick solid black;
     
-    // 3. NEW CLIP-PATH: Everything is now inside the box (0 to 100%)
-    clip-path: polygon(
-      0 0, $tick-len 0, $tick-len 100%, 0 100%, calc(100% - $tick-len) 0, 100% 0, 100% 100%, calc(100% - $tick-len) 100%
-    );
-  }  
-
-  .content {
+    //z-index: 1; // Lowest
+  }
+  // LAYER 2: The Vertical Ticks
+  &::after {
+    content: "";
+    //background-color: #fa08;
     position: absolute;
-    top: $bleed;
+    // Stretch vertically past the card edges
+    top: #{-$tick-len};
+    height: calc(100% + 2*$tick-len);
+    // Align exactly with the top/bottom trim lines
     left: $bleed;
     width: $card-w;
-    height: $card-h;
-    overflow: visible;
     
-    // The "Safe Zone" - 0.1" inside the trim line
-    padding: 0.12in;
-    box-sizing: border-box;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    text-shadow: 1px 1px 3px black;
+    border-left: $tick-thick solid black;
+    border-right: $tick-thick solid black;
+    z-index: 1; // Lowest
   }
+  
+  .card {
+    position: relative;
+    width: $total-w;
+    height: $total-h;
+    overflow: visible;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; // Scales the image to fill the 2.7" x 3.7" area
 
-  &.haldirs_ring {
-      background-image: url("Haldir's wedding ring.png");
+    .content {
+      position: absolute;
+      box-sizing: border-box;
+      padding: 0.5em 0.5em;
+      top: $bleed; 
+      left: $bleed;
+      width: #{$card-w};
+      height: #{$card-h};
+      z-index: 1;
+      
+      //background: #0f48;
+      
+      // Add your text styling here
+      display: flex;
+      flex-direction: column;
+      align-items: normal;
+      justify-content: space-between;
+    }
+
+    &.haldirs_ring {
+        background-image: url("Haldir's wedding ring.png");
+    }
   }
 }
