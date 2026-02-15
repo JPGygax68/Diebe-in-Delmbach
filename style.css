@@ -10,7 +10,7 @@ body {
 }
 
 .page {
-  background-color: violet;
+  background-color: rgb(255, 243, 245.0952380952);
   margin: auto auto;
   display: grid;
   grid-template-columns: repeat(3, 2.6in);
@@ -30,6 +30,7 @@ body {
   background-position: center;
   box-sizing: border-box;
   overflow: visible;
+  background-color: white;
 }
 .card::before, .card::after {
   content: "";

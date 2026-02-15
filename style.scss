@@ -3,7 +3,7 @@ $card-w: 2.5in;
 $card-h: 3.5in;
 $bleed: 0.05in;
 $safe-gap: 0.25in; // This is now just a spacer, not a clip boundary
-$tick-len: calc($bleed);
+$tick-len: $bleed;
 $tick-thickness: 0.5pt;
 $printer-margin: 5mm; // Adjust based on your printer's non-printable area
 
@@ -26,7 +26,7 @@ body {
 }
 
 .page {
-  background-color: violet; // for debugging
+  background-color: lighten(pink, 10%); // for debugging
   margin: auto auto; // Centers the grid on the sheet
   display: grid;
   grid-template-columns: repeat(3, #{$total-w});
@@ -50,6 +50,8 @@ body {
   background-position: center;
   box-sizing: border-box;
   overflow: visible; // Ensure crop marks can extend outside
+
+  background-color: white;
 
     // THE CROP MARKS
   // We create 4 small lines that point to the corners of the 2.5x3.5 area
@@ -101,8 +103,6 @@ body {
       0 0, $tick-len 0, $tick-len 100%, 0 100%, calc(100% - $tick-len) 0, 100% 0, 100% 100%, calc(100% - $tick-len) 100%
     );
   }  
-  // Note: These borders will "cross" at the corners. 
-  // The parts outside the 2.5x3.5 area are your guides.
 
   .content {
     position: absolute;
@@ -122,9 +122,6 @@ body {
     align-items: center;
     color: white;
     text-shadow: 1px 1px 3px black;
-    
-    // Optional: Visual guide for the trim line
-    // border: 1px dashed rgba(255,255,255,0.4); 
   }
 
   &.haldirs_ring {

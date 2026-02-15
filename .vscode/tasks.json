@@ -4,7 +4,7 @@
     {
       "label": "Build PDF",
       "type": "shell",
-      "command": "weasyprint cards.html cards_final.pdf",
+      "command": "weasyprint cards_3x3_a4.html cards_final.pdf",
       "group": { "kind": "build", "isDefault": true }
     }
   ]
