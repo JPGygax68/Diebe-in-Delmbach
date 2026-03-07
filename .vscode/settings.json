@@ -1,0 +1,22 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "Card-Env": {
+            "path": "/bin/bash",
+            "args": [
+                "--rcfile",
+                ".venv/bin/activate"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "Card-Env",
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".*\\.(scss|html)$",
+                "isSync": false,
+                "cmd": "./.venv/bin/weasyprint cards_3x3_a4.html cards_final.pdf",
+                "runIn": "terminal"
+            }
+        ]
+    }
+}

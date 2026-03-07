@@ -2,10 +2,40 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build PDF",
+      "label": "Auto-Start Weasy",
       "type": "shell",
-      "command": "weasyprint cards_3x3_a4.html cards_final.pdf",
-      "group": { "kind": "build", "isDefault": true }
+      "command": "source .venv/bin/activate && echo 'Ready to print!'",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Print to PDF",
+      "type": "shell",
+      "command": ".venv/bin/weasyprint cards_3x3_a4.html cards_final.pdf",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build and Refresh Preview",
+      "dependsOn": "Print to PDF", // Runs the build task first
+      "command": "${command:latex-workshop.refresh-viewer}", // Refreshes the tab
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
     }
   ]
 }

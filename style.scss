@@ -90,6 +90,7 @@ body {
     height: $total-h;
     overflow: visible;
     z-index: 10;
+    background-color: white; // Fallback color
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; // Scales the image to fill the 2.7" x 3.7" area
@@ -97,7 +98,9 @@ body {
     .content {
       position: absolute;
       box-sizing: border-box;
-      padding: 0.5em 0.5em;
+      // An inner box that is actually a super-thin line that helps with cutting accuracy
+      //border: 0.1pt solid rgba(0, 0, 0, 0.3);
+      padding: 1em 1em;
       top: $bleed; 
       left: $bleed;
       width: #{$card-w};
@@ -109,12 +112,52 @@ body {
       // Add your text styling here
       display: flex;
       flex-direction: column;
-      align-items: normal;
+      align-items: center;
       justify-content: space-between;
     }
 
-    &.haldirs_ring {
+    &.haldir {
+        background-image: url("Haldir Eisenbart.png");
+        background-size: 100%;
+    }
+    &.beregund {
+        background-image: url("Beregund V7.png");
+        background-size: 100%;
+    } 
+    &.beregunds_kompass {
+        background-image: url("Beregund's Kompass.png");
+        background-color: white;
+        background-size: 80%;
+    }
+    &.rabid_grey_wolf {
+        background-image: url("Rabid grey wolf.png");
+        background-color: white;
+        background-size: 100%;
+    }
+    &.haldirs_wedding_ring {
         background-image: url("Haldir's wedding ring.png");
+        background-color: white;
+        background-size: 50%;
+    }
+    &.hildes_wedding_ring {
+        background-image: url("Hilde's wedding ring.png");
+        background-color: white;
+        background-size: 50%;
+    }
+    &.jonas_apfelberg {
+        background-image: url("Jonas Apfelberg V2.png");
+        background-color: white;
+        background-size: 90%;
+    }
+    &.adela_apfelberg {
+        background-image: url("Adela Apfelberg V3.png");
+        background-color: white;
+        background-size: 90%;
+    }
+    &.alinda_apfelberg {
+        background-image: url("Alinda Apfelberg.png");
+        background-color: white;
+        background-size: 100%;
     }
   }
 }

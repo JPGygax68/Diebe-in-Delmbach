@@ -56,6 +56,7 @@ body {
   height: 3.6in;
   overflow: visible;
   z-index: 10;
+  background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -63,7 +64,7 @@ body {
 .box .card .content {
   position: absolute;
   box-sizing: border-box;
-  padding: 0.5em 0.5em;
+  padding: 1em 1em;
   top: 0.05in;
   left: 0.05in;
   width: 2.5in;
@@ -71,9 +72,49 @@ body {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: normal;
+  align-items: center;
   justify-content: space-between;
 }
-.box .card.haldirs_ring {
+.box .card.haldir {
+  background-image: url("Haldir Eisenbart.png");
+  background-size: 100%;
+}
+.box .card.beregund {
+  background-image: url("Beregund V7.png");
+  background-size: 100%;
+}
+.box .card.beregunds_kompass {
+  background-image: url("Beregund's Kompass.png");
+  background-color: white;
+  background-size: 80%;
+}
+.box .card.rabid_grey_wolf {
+  background-image: url("Rabid grey wolf.png");
+  background-color: white;
+  background-size: 100%;
+}
+.box .card.haldirs_wedding_ring {
   background-image: url("Haldir's wedding ring.png");
+  background-color: white;
+  background-size: 50%;
+}
+.box .card.hildes_wedding_ring {
+  background-image: url("Hilde's wedding ring.png");
+  background-color: white;
+  background-size: 50%;
+}
+.box .card.jonas_apfelberg {
+  background-image: url("Jonas Apfelberg V2.png");
+  background-color: white;
+  background-size: 90%;
+}
+.box .card.adela_apfelberg {
+  background-image: url("Adela Apfelberg V3.png");
+  background-color: white;
+  background-size: 90%;
+}
+.box .card.alinda_apfelberg {
+  background-image: url("Alinda Apfelberg.png");
+  background-color: white;
+  background-size: 100%;
 }/*# sourceMappingURL=style.css.map */
