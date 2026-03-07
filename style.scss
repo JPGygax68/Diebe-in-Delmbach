@@ -114,50 +114,8 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-    }
 
-    &.haldir {
-        background-image: url("Haldir Eisenbart.png");
-        background-size: 100%;
-    }
-    &.beregund {
-        background-image: url("Beregund V7.png");
-        background-size: 100%;
-    } 
-    &.beregunds_kompass {
-        background-image: url("Beregund's Kompass.png");
-        background-color: white;
-        background-size: 80%;
-    }
-    &.rabid_grey_wolf {
-        background-image: url("Rabid grey wolf.png");
-        background-color: white;
-        background-size: 100%;
-    }
-    &.haldirs_wedding_ring {
-        background-image: url("Haldir's wedding ring.png");
-        background-color: white;
-        background-size: 50%;
-    }
-    &.hildes_wedding_ring {
-        background-image: url("Hilde's wedding ring.png");
-        background-color: white;
-        background-size: 50%;
-    }
-    &.jonas_apfelberg {
-        background-image: url("Jonas Apfelberg V2.png");
-        background-color: white;
-        background-size: 90%;
-    }
-    &.adela_apfelberg {
-        background-image: url("Adela Apfelberg V3.png");
-        background-color: white;
-        background-size: 90%;
-    }
-    &.alinda_apfelberg {
-        background-image: url("Alinda Apfelberg.png");
-        background-color: white;
-        background-size: 100%;
+      h2 { text-align: center;}
     }
   }
 }

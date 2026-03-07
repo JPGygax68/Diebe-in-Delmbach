@@ -75,46 +75,6 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.box .card.haldir {
-  background-image: url("Haldir Eisenbart.png");
-  background-size: 100%;
-}
-.box .card.beregund {
-  background-image: url("Beregund V7.png");
-  background-size: 100%;
-}
-.box .card.beregunds_kompass {
-  background-image: url("Beregund's Kompass.png");
-  background-color: white;
-  background-size: 80%;
-}
-.box .card.rabid_grey_wolf {
-  background-image: url("Rabid grey wolf.png");
-  background-color: white;
-  background-size: 100%;
-}
-.box .card.haldirs_wedding_ring {
-  background-image: url("Haldir's wedding ring.png");
-  background-color: white;
-  background-size: 50%;
-}
-.box .card.hildes_wedding_ring {
-  background-image: url("Hilde's wedding ring.png");
-  background-color: white;
-  background-size: 50%;
-}
-.box .card.jonas_apfelberg {
-  background-image: url("Jonas Apfelberg V2.png");
-  background-color: white;
-  background-size: 90%;
-}
-.box .card.adela_apfelberg {
-  background-image: url("Adela Apfelberg V3.png");
-  background-color: white;
-  background-size: 90%;
-}
-.box .card.alinda_apfelberg {
-  background-image: url("Alinda Apfelberg.png");
-  background-color: white;
-  background-size: 100%;
+.box .card .content h2 {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
