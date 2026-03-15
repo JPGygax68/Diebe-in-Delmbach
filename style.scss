@@ -100,7 +100,7 @@ body {
       box-sizing: border-box;
       // An inner box that is actually a super-thin line that helps with cutting accuracy
       //border: 0.1pt solid rgba(0, 0, 0, 0.3);
-      padding: 1em 1em;
+      padding: 3mm;
       top: $bleed; 
       left: $bleed;
       width: #{$card-w};
@@ -117,19 +117,22 @@ body {
 
       text-align: center;
 
+      p {
+        margin: 0.25em 0;
+      }
       ul {
-        margin-top: 0.5em;
+        margin: 0.25em 0;
         padding-left: 1em;
       }
 
-      h2,h3,h4 { 
+      h1,h2,h3,h4 { 
         margin: 0.3em 0 0.1em 0;
         text-align: center;
       }
 
       .image {
         width: 100%;
-        height: 100%;
+        height: 80%;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
