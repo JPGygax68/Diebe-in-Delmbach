@@ -14,9 +14,24 @@
       }
     },
     {
-      "label": "Print to PDF",
+      "label": "Build HTML",
       "type": "shell",
-      "command": ".venv/bin/weasyprint cards_3x3_a4.html cards_final.pdf",
+      "command": "node render.mjs",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Print to PDF",
+      "dependsOn": "Build HTML", // Ensures this runs after the HTML is built
+      "type": "shell",
+      "command": ".venv/bin/weasyprint output-static.html cards_final.pdf",
       "presentation": {
         "reveal": "always",
         "panel": "shared"
