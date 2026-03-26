@@ -13,7 +13,7 @@ const fullinputpath = fs.realpathSync("cards_3x3_a4.html");
   });
 
   const html = await page.content();
-  fs.writeFileSync("output-static.html", html);
+  fs.writeFileSync("cards-static.html", html);
 
   await browser.close();
 })();
