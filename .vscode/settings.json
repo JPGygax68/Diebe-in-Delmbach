@@ -9,5 +9,12 @@
             "runningStatusMessage": "Making...",
             "finishStatusMessage": "Made."
         }
-    ]   
+    ]   ,
+    "files.associations": {
+        "templates/*.html": "nunjucks"
+    },
+    "editor.defaultFormatter": "eseom.nunjucks-template",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
 }

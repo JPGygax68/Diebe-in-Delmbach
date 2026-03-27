@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        .box {
+            {% if background_image %}
+                background-image: url('{{ background_image }}');
+                background-repeat: no-repeat;
+                background-position: center;
+                {% if background_size %}
+                    background-size: {{ background_size }};
+                {% else %}
+                    background-size: cover;
+                {% endif %}
+            {% endif %}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="card">
+            <div class="content">
+                <h2>{{ title }}</h2>
+                <p>{{ text }}</p>
+            </div>
+        </div>
+    </div>
+
+</html>

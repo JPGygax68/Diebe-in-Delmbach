@@ -1,0 +1,17 @@
+{
+  "name": "printshop_diebe_in_delmbach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JPGygax68/Diebe-in-Delmbach.git"
+  },
+  "author": "Jean-Pierre Gygax",
+  "dependencies": {
+    "nunjucks": "^3.2.4"
+  }
+}
