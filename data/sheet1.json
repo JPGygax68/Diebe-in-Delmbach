@@ -7,9 +7,51 @@
             "image_size": "60%"
         },
         {
+            "title": "Beregund's Kompass",
+            "text": "Hilft bei der Orientierung in der Wildnis",
+            "image": "Beregunds Kompass.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Jägerzeichen",
+            "text": "Erkenntnismagie, 1. Stufe",
+            "image": "Jägermal.png",
+            "image_size": "80%"
+        },
+        {
             "title": "1 Goldstück",
             "text": "Gold - wer braucht es nicht?",
-            "image": "Gold Piece.png",
+            "image": "gold_coin.png",
+            "image_size": "80%"
+        },
+        {
+            "title": "1 Silberstück",
+            "text": "Für die kleinen Dinge des Lebens",
+            "image": "silver_coin.png",
+            "image_size": "90%"
+        },
+        {
+            "title": "1 Kupferstück",
+            "text": "Manchmal hilft auch Kleingeld weiter",
+            "image": "copper_coin.png",
+            "image_size": "80%"
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%"
+        },
+        {
+            "title": "1 Silberstück",
+            "text": "Für die kleinen Dinge des Lebens",
+            "image": "silver_coin.png",
+            "image_size": "90%"
+        },
+        {
+            "title": "1 Kupferstück",
+            "text": "Manchmal hilft auch Kleingeld weiter",
+            "image": "copper_coin.png",
             "image_size": "80%"
         }
     ]
