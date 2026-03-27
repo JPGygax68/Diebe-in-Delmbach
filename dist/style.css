@@ -52,7 +52,6 @@ body {
 }
 .box .card {
   position: relative;
-  padding: 5mm;
   width: 2.6in;
   height: 3.6in;
   overflow: visible;
@@ -107,3 +106,5 @@ card-back {
 card-back * {
   text-align: start;
 }
+
+/*# sourceMappingURL=style.css.map */

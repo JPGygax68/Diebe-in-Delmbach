@@ -2,7 +2,7 @@
     "runOnSave.commands": [
         {
             // Match scss files except names start with `_`.
-            "match": "(.*\\.(html|scss))|Makefile$",
+            //"match": "(.*\\.(html|scss))|Makefile$",
             //"notMatch": "[\\\\\\/]_[^\\\\\\/]*\\.scss$",
             "command": "make",
             "runIn": "terminal",
