@@ -3,14 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./style.css">
+        
+            
+                <link rel="preload" as="image" href="../images/Prillas healing stone.png">
+            
+        
+            
+                <link rel="preload" as="image" href="../images/Gold Piece.png">
+            
+        
+        <style>
+            
+                #card-1 .card {
+                    background-image: url('../images/Prillas healing stone.png');
+                    
+                        background-size: 60%;
+                    
+                }
+            
+                #card-2 .card {
+                    background-image: url('../images/Gold Piece.png');
+                    
+                        background-size: 80%;
+                    
+                }
+            
+        </style>
     </head>
     <body>
         <div class="page">
             
-                <div class="box">
-                    <div class="card"  style="background-image: url('../images/Prillas healing stone.png');
-                                                 background-size: 60%;
-                                                " >
+                <div class="box" id="card-1">
+                    <div class="card">
                         <div class="content">
                             <h2>Prillas Heilstein</h2>
                             <p>1d4 Heilung, 1x pro Tag</p>
@@ -18,13 +42,11 @@
                     </div>
                 </div>
             
-                <div class="box">
-                    <div class="card"  style="background-image: url('../images/Gold Piece.png');
-                                                 background-size: 60%;
-                                                " >
+                <div class="box" id="card-2">
+                    <div class="card">
                         <div class="content">
                             <h2>1 Goldstück</h2>
-                            <p>Wer braucht kein Gold?</p>
+                            <p>Gold - wer braucht es nicht?</p>
                         </div>
                     </div>
                 </div>
