@@ -8,7 +8,7 @@ $tick-thick: 0.5pt;
 $printer-margin: 5mm; // Adjust based on your printer's non-printable area
 
 // Total Card Size
-$total-w: $card-w + (2 * $bleed); 
+$total-w: $card-w + (2 * $bleed);
 $total-h: $card-h + (2 * $bleed);
 
 // --- 2. The Fix: Zero out the @page clipping ---
@@ -17,7 +17,8 @@ $total-h: $card-h + (2 * $bleed);
   margin: 0mm; // Removes the browser's clipping "window"
 }
 
-html, body {
+html,
+body {
   font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
   margin: 0;
   padding: 0;
@@ -26,14 +27,14 @@ html, body {
 }
 
 .page {
-  background-color: rgba(250,240,240);
+  background-color: rgba(250, 240, 240);
   margin: $printer-margin;
   display: grid;
   grid-template-columns: repeat(3, #{$total-w});
   grid-template-rows: repeat(3, #{$total-h});
   // THIS is the "magic" for distribution
   justify-content: space-between; // Distributes extra horizontal space
-  align-content: space-between;   // Distributes extra vertical space
+  align-content: space-between; // Distributes extra vertical space
   overflow: visible;
 
   // MANDATORY: The container must be larger than the content
@@ -61,12 +62,13 @@ html, body {
     // Align exactly with the top/bottom trim lines
     top: $bleed;
     height: $card-h;
-    
+
     border-top: $tick-thick solid black;
     border-bottom: $tick-thick solid black;
-    
+
     //z-index: 1; // Lowest
   }
+
   // LAYER 2: The Vertical Ticks
   &::after {
     content: "";
@@ -78,12 +80,12 @@ html, body {
     // Align exactly with the top/bottom trim lines
     left: $bleed;
     width: $card-w;
-    
+
     border-left: $tick-thick solid black;
     border-right: $tick-thick solid black;
     z-index: 1; // Lowest
   }
-  
+
   .card {
     position: relative;
     width: $total-w;
@@ -101,14 +103,14 @@ html, body {
       // An inner box that is actually a super-thin line that helps with cutting accuracy
       //border: 0.1pt solid rgba(0, 0, 0, 0.3);
       padding: 3mm;
-      top: $bleed; 
+      top: $bleed;
       left: $bleed;
       width: #{$card-w};
       height: #{$card-h};
       z-index: 1;
-      
+
       //background: #0f48;
-      
+
       // Add your text styling here
       display: flex;
       flex-direction: column;
@@ -120,12 +122,16 @@ html, body {
       p {
         margin: 0.25em 0;
       }
+
       ul {
         margin: 0.25em 0;
         padding-left: 1em;
       }
 
-      h1,h2,h3,h4 { 
+      h1,
+      h2,
+      h3,
+      h4 {
         margin: 0.3em 0 0.1em 0;
         text-align: center;
       }
@@ -137,15 +143,16 @@ html, body {
         background-repeat: no-repeat;
         background-position: center;
       }
-
-      &.back {
-        display: block;
-        font-size: 90%;
-        text-align: start;
-        * {
-          text-align: start;
-        }
-      }
     }
+  }
+}
+
+card-back {
+  display: block;
+  font-size: 90%;
+  text-align: start;
+
+  * {
+    text-align: start;
   }
 }

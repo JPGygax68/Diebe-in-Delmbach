@@ -2,7 +2,8 @@
   size: A4;
   margin: 0mm;
 }
-html, body {
+html,
+body {
   font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
   margin: 0;
   padding: 0;
@@ -82,7 +83,10 @@ html, body {
   margin: 0.25em 0;
   padding-left: 1em;
 }
-.box .card .content h1, .box .card .content h2, .box .card .content h3, .box .card .content h4 {
+.box .card .content h1,
+.box .card .content h2,
+.box .card .content h3,
+.box .card .content h4 {
   margin: 0.3em 0 0.1em 0;
   text-align: center;
 }
@@ -93,12 +97,13 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
 }
-.box .card .content.back {
+
+card-back {
   display: block;
   font-size: 90%;
   text-align: start;
 }
-.box .card .content.back * {
+card-back * {
   text-align: start;
 }
 
