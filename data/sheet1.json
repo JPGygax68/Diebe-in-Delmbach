@@ -1,0 +1,17 @@
+{
+    "title": "Sheet 1",
+    "cards": [
+        {
+            "title": "Prillas Heilstein",
+            "text": "1d4 Heilung, 1x pro Tag",
+            "image": "Prillas healing stone.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Wer braucht kein Gold?",
+            "image": "Gold Piece.png",
+            "image_size": "60%"
+        }
+    ]
+}

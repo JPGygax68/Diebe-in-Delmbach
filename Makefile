@@ -1,25 +1,19 @@
-# Files
-SRC = cards_3x3_a4.html style.scss
-STATIC = cards-static.html style.css
-PDF = cards_final.pdf
-
 # Default target
-all: $(PDF)
+all: dist/sheet1.pdf
 
 # Step 1: Convert SCSS → CSS
-style.css:  style.scss
-	sass style.scss style.css
+dist/style.css:  templates/style.scss
+	sass templates/style.scss dist/style.css
 
-# Step 2: Expand Web Components → static HTML
-cards-static.html: cards_3x3_a4.html style.css render.mjs
-	node render.mjs cards_3x3_a4.html cards-static.html
+dist/sheet1.html: build.mjs data/sheet1.json
+	node build.mjs sheet1
 
-# Step 3: Convert static HTML → PDF
-$(PDF): cards-static.html
-	weasyprint cards-static.html cards_final.pdf
+# Convert static HTML → PDF
+dist/sheet1.pdf: dist/sheet1.html dist/style.css images/*
+	weasyprint dist/sheet1.html dist/sheet1.pdf
 
 # Clean
 clean:
-	rm -f $(STATIC) $(PDF)
+	rm -f dist/*
 
 
