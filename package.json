@@ -12,6 +12,7 @@
   },
   "author": "Jean-Pierre Gygax",
   "dependencies": {
+    "marked": "^17.0.5",
     "nunjucks": "^3.2.4"
   }
 }

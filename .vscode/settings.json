@@ -20,4 +20,10 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
 }

@@ -74,23 +74,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+.page.front .content {
   text-align: center;
 }
-.box .card .content p {
+.page.front .content p {
   margin: 0.25em 0;
 }
-.box .card .content ul {
+.page.front .content ul {
   margin: 0.25em 0;
   padding-left: 1em;
 }
-.box .card .content h1,
-.box .card .content h2,
-.box .card .content h3,
-.box .card .content h4 {
+.page.front .content h1,
+.page.front .content h2,
+.page.front .content h3,
+.page.front .content h4 {
   margin: 0.3em 0 0.1em 0;
   text-align: center;
 }
-.box .card .content .image {
+.page.front .content .image {
   width: 100%;
   height: 80%;
   background-size: contain;
@@ -98,11 +101,22 @@ body {
   background-position: center;
 }
 
-card-back {
+.page.back .content {
   display: block;
-  font-size: 90%;
+  font-size: 85%;
   text-align: start;
 }
-card-back * {
-  text-align: start;
+.page.back .content h1, .page.back .content h2, .page.back .content h3, .page.back .content h4 {
+  margin: 0.4em 0 0.1em 0;
 }
+.page.back .content p, .page.back .content ul {
+  margin: 0.1em 0;
+}
+.page.back .content ul {
+  padding-left: 1.5em;
+}
+.page.back .content table {
+  border-spacing: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

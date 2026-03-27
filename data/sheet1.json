@@ -16,7 +16,8 @@
             "title": "Jägerzeichen",
             "text": "Erkenntnismagie, 1. Stufe",
             "image": "Jägermal.png",
-            "image_size": "80%"
+            "image_size": "80%",
+            "back_file": "hunters_mark.md"
         },
         {
             "title": "1 Goldstück",
