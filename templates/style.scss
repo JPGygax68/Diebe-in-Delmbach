@@ -154,6 +154,11 @@ body {
   font-size: 85%;
   text-align: start;
 
+  em {
+    font-style: normal;
+    font-weight: bold;
+  }
+
   h1,h2,h3,h4 {
     margin: 0.4em 0 0.1em 0;
   }
@@ -164,6 +169,10 @@ body {
     padding-left: 1.5em;
   }
   table {
+    border-collapse: collapse;
     border-spacing: 0;
+    td {
+      padding-right: 1em;
+    }
   }
 }

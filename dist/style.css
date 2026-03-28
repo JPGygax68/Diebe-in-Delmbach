@@ -106,6 +106,10 @@ body {
   font-size: 85%;
   text-align: start;
 }
+.page.back .content em {
+  font-style: normal;
+  font-weight: bold;
+}
 .page.back .content h1, .page.back .content h2, .page.back .content h3, .page.back .content h4 {
   margin: 0.4em 0 0.1em 0;
 }
@@ -116,7 +120,11 @@ body {
   padding-left: 1.5em;
 }
 .page.back .content table {
+  border-collapse: collapse;
   border-spacing: 0;
+}
+.page.back .content table td {
+  padding-right: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */
