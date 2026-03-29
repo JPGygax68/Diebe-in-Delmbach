@@ -1,16 +1,25 @@
+DATA_BASES := $(basename $(notdir $(wildcard data/*.json)))
+HTMLS := $(patsubst %,dist/%.html,$(DATA_BASES))
+PDFS := $(patsubst %,dist/%.pdf,$(DATA_BASES))
+
 # Default target
-all: dist/sheet1.pdf
+all: $(PDFS)
+
+# Ensure output directory exists
+dist:
+	mkdir -p dist
 
 # Step 1: Convert SCSS → CSS
-dist/style.css:  templates/style.scss
+dist/style.css: templates/style.scss | dist
 	sass templates/style.scss dist/style.css
 
-dist/sheet1.html: build.mjs templates/cards_3x3_a4.njk $(wildcard data/**/*)
-	node build.mjs sheet1
+# Convert each JSON dataset into HTML using the shared template
+dist/%.html: data/%.json build.mjs templates/cards_3x3_a4.njk | dist
+	node build.mjs $*
 
 # Convert static HTML → PDF
-dist/sheet1.pdf: dist/sheet1.html dist/style.css images/*
-	weasyprint dist/sheet1.html dist/sheet1.pdf
+dist/%.pdf: dist/%.html dist/style.css images/* | dist
+	weasyprint $< $@
 
 # Clean
 clean:

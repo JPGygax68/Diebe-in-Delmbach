@@ -21,6 +21,7 @@ body {
   width: calc(210mm - 5mm * 2);
   height: calc(297mm - 5mm * 2);
   position: relative;
+  page-break-after: always;
 }
 
 .box {
@@ -75,56 +76,32 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
-.page.front .content {
-  text-align: center;
-}
-.page.front .content p {
-  margin: 0.25em 0;
-}
-.page.front .content ul {
-  margin: 0.25em 0;
-  padding-left: 1em;
-}
-.page.front .content h1,
-.page.front .content h2,
-.page.front .content h3,
-.page.front .content h4 {
-  margin: 0.3em 0 0.1em 0;
-  text-align: center;
-}
-.page.front .content .image {
-  width: 100%;
-  height: 80%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.page.back .content {
+.box.back .content {
   display: block;
   font-size: 85%;
   text-align: start;
 }
-.page.back .content em {
+.box.back .content em {
   font-style: normal;
   font-weight: bold;
 }
-.page.back .content h1, .page.back .content h2, .page.back .content h3, .page.back .content h4 {
+.box.back .content h1,
+.box.back .content h2,
+.box.back .content h3,
+.box.back .content h4 {
   margin: 0.4em 0 0.1em 0;
 }
-.page.back .content p, .page.back .content ul {
+.box.back .content p,
+.box.back .content ul {
   margin: 0.1em 0;
 }
-.page.back .content ul {
+.box.back .content ul {
   padding-left: 1.5em;
 }
-.page.back .content table {
+.box.back .content table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.page.back .content table td {
+.box.back .content table td {
   padding-right: 1em;
 }
-
-/*# sourceMappingURL=style.css.map */

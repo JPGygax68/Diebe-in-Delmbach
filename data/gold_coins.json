@@ -1,0 +1,67 @@
+{
+    "cards": [
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        }
+    ]
+}
