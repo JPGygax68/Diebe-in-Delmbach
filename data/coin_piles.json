@@ -1,0 +1,67 @@
+{
+    "cards": [
+        {
+            "title": "10 Goldstücke",
+            "text": "Gold - je mehr, desto besser",
+            "image": "10_gold_coins.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "10 Goldstücke",
+            "text": "Gold - je mehr, desto besser",
+            "image": "10_gold_coins.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "10 Goldstücke",
+            "text": "Gold - je mehr, desto besser",
+            "image": "10_gold_coins.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "10 Silberstücke",
+            "text": "Silber, 10 Stücke",
+            "image": "10_silver_coins.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "10 Silberstücke",
+            "text": "Silber, 10 Stücke",
+            "image": "10_silver_coins.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "10 Silberstücke",
+            "text": "Silber, 10 Stücke",
+            "image": "10_silver_coins.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "10 Kupferstücke",
+            "text": "Viel Kleingeld",
+            "image": "10_copper_coins.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "10 Kupferstücke",
+            "text": "Viel Kleingeld",
+            "image": "10_copper_coins.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "10 Kupferstücke",
+            "text": "Viel Kleingeld",
+            "image": "10_copper_coins.png",
+            "image_size": "80%",
+            "both_sided": true
+        }
+    ]
+}

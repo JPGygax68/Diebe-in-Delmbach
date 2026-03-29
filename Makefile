@@ -14,11 +14,11 @@ dist/style.css: templates/style.scss | dist
 	sass templates/style.scss dist/style.css
 
 # Convert each JSON dataset into HTML using the shared template
-dist/%.html: data/%.json build.mjs templates/cards_3x3_a4.njk | dist
+dist/%.html: data/%.json build.mjs templates/cards_3x3_a4.njk
 	node build.mjs $*
 
 # Convert static HTML → PDF
-dist/%.pdf: dist/%.html dist/style.css images/* | dist
+dist/%.pdf: dist/%.html dist/style.css images/*
 	weasyprint $< $@
 
 # Clean
