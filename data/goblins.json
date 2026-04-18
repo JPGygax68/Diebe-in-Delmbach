@@ -1,0 +1,64 @@
+{
+    "cards": [
+        {
+            "title": "Goblin-Krieger",
+            "text": "Klein und böse",
+            "image": "goblin_fighter.png",
+            "image_size": "100%"
+        },
+        {
+            "title": "Goblin-Krieger",
+            "text": "Klein und böse",
+            "image": "goblin_fighter.png",
+            "image_size": "100%"
+        },
+        {
+            "title": "Goblin-Krieger",
+            "text": "Klein und böse",
+            "image": "goblin_fighter.png",
+            "image_size": "100%"
+        },
+        {
+            "title": "Goblin-Schütze",
+            "text": "Klein und gemein",
+            "image": "goblin_archer.png",
+            "image_size": "80%",
+            "back_file": "goblin_archer.md"
+        },
+        {
+            "title": "Goblin-Schütze",
+            "text": "Klein und gemein",
+            "image": "goblin_archer.png",
+            "image_size": "80%",
+            "back_file": "goblin_archer.md"
+        },
+        {
+            "title": "Goblin-Schütze",
+            "text": "Klein und gemein",
+            "image": "goblin_archer.png",
+            "image_size": "80%",
+            "back_file": "goblin_archer.md"
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Silberstück",
+            "text": "Für die kleinen Dinge des Lebens",
+            "image": "silver_coin.png",
+            "image_size": "90%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Kupferstück",
+            "text": "Manchmal hilft auch Kleingeld weiter",
+            "image": "copper_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        }
+    ]
+}
