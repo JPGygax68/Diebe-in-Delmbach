@@ -3,20 +3,24 @@
         {
             "title": "Goblin-Krieger",
             "text": "Klein und böse",
-            "image": "goblin_fighter.png",
-            "image_size": "100%"
+            "image": "goblin_warrior.png",
+            "image_size": "100%",
+            "back_file": "goblin_warrior.md"
         },
         {
             "title": "Goblin-Krieger",
             "text": "Klein und böse",
-            "image": "goblin_fighter.png",
-            "image_size": "100%"
+            "image": "goblin_warrior.png",
+            "image_size": "100%",
+            "back_file": "goblin_warrior.md"
+
         },
         {
             "title": "Goblin-Krieger",
             "text": "Klein und böse",
-            "image": "goblin_fighter.png",
-            "image_size": "100%"
+            "image": "goblin_warrior.png",
+            "image_size": "100%",
+            "back_file": "goblin_warrior.md"
         },
         {
             "title": "Goblin-Schütze",
