@@ -44,25 +44,25 @@
             "back_file": "goblin_archer.md"
         },
         {
-            "title": "1 Goldstück",
-            "text": "Gold - wer braucht es nicht?",
-            "image": "gold_coin.png",
+            "title": "Goblin-Speerträger",
+            "text": "Klein und fies",
+            "image": "goblin_spearfighter.png",
             "image_size": "80%",
-            "both_sided": true
+            "back_file": "goblin_spearfighter.md"
         },
         {
-            "title": "1 Silberstück",
-            "text": "Für die kleinen Dinge des Lebens",
-            "image": "silver_coin.png",
-            "image_size": "90%",
-            "both_sided": true
+            "title": "Goblin-Speerträger",
+            "text": "Klein und fies",
+            "image": "goblin_spearfighter.png",
+            "image_size": "80%",
+            "back_file": "goblin_spearfighter.md"
         },
         {
-            "title": "1 Kupferstück",
-            "text": "Manchmal hilft auch Kleingeld weiter",
-            "image": "copper_coin.png",
+            "title": "Goblin-Speerträger",
+            "text": "Klein und fies",
+            "image": "goblin_spearfighter.png",
             "image_size": "80%",
-            "both_sided": true
+            "back_file": "goblin_spearfighter.md"
         }
     ]
 }

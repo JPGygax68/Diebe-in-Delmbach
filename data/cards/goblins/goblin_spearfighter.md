@@ -2,11 +2,11 @@
 
 ### Kleiner Humanoide, neutral böse
 
-|               |                  |
-| ------------- | ---------------- |
-| *Rüstungskl.* | 15 (Lederrüst. + kl. Schild) |
-| *Trefferpkt.* | 9 (2W6)           |
-| *Bewegung*    | 9 m (30 ft)       |
+|                  |                  |
+| ---------------- | ---------------- |
+| *Rüstungskl.*    | 15 (Lederrüst. + Holzschild) |
+| *Trefferpkt.*    | 9 (2W6)           |
+| *Bewegung*       | 9 m (30 ft)       |
 
 <div class="attributes">
 
@@ -27,8 +27,8 @@
 #### Wendige Flucht (Nimble Escape)
 Kann die Aktionen Disengage oder Hide als Bonusaktion ausführen.
 
-#### Kurzschwert
-+4 zum Treffer, Reichweite 1,5 m, ein Ziel.
-Treffer: 5 (1W6 + 2) Hiebschaden.
+#### Abstand halten
+Vorteil auf Angriff wenn Verb. max. 1.5m vom Ziel
+Treffer: 5 (1W6 + 2) Stichschaden.
 
 </div>
