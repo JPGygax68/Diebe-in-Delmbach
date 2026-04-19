@@ -16,13 +16,9 @@ if (!sheet) {
 
 // Add a filter that reads a Markdown file and converts it to HTML
 env.addFilter("readmd", function (filename) {
-  const md = fs.readFileSync('data/cards/' + filename, "utf8");
+  const md = fs.readFileSync(`data/cards/${sheet}/${filename}`, "utf8");
   return marked(md);
 });
-
-// Compile SASS to CSS
-const result = sass.compile('templates/style.scss');
-fs.writeFileSync('dist/style.css', result.css, 'utf8');
 
 // Load JSON data
 const inputJson = `data/${sheet}.json`;

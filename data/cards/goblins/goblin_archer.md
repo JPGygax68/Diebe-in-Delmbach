@@ -5,7 +5,7 @@
 |                  |                  |
 | ---------------- | ---------------- |
 | *Rüstungsklasse* | 14 (Lederrüstung) |
-| *Trefferpunkte*  | 7 (2W6)           |
+| *Trefferpunkte*  | 7 (2W6)            |
 | *Bewegung*       | 9 m (30 ft)       |
 
 <div class="attributes">

@@ -17,7 +17,7 @@ dist/style.css: templates/style.scss | dist
 	sass templates/style.scss dist/style.css
 
 # Convert each JSON dataset into HTML using the shared template
-dist/%.html: data/%.json build.mjs templates/cards_3x3_a4.njk data/cards/*.md
+dist/%.html: data/%.json data/cards/%/*.md build.mjs templates/cards_3x3_a4.njk 
 	node build.mjs $*
 
 # Convert static HTML → PDF	
