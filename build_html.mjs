@@ -7,10 +7,10 @@ import { marked } from 'marked';
 const env = nunjucks.configure('templates', { autoescape: true });
 
 // Read command-line arguments
-const [,, sheet] = process.argv;
+const [,, template, sheet] = process.argv;
 
 if (!sheet) {
-  console.error("Usage: node build.js <sheet>");
+  console.error("Usage: node build_html.mjs <template> <sheet>");
   process.exit(1);
 }
 
@@ -25,7 +25,7 @@ const inputJson = `data/${sheet}.json`;
 const data = JSON.parse(fs.readFileSync(inputJson, "utf8"));
 
 // Render the template
-const html = nunjucks.render("cards_3x3_a4.njk", data);
+const html = nunjucks.render(`${template}.njk`, data);
 
 // Write output to "dist" directory, using the input JSON filename with .html extension
 const outputHtml = `dist/${sheet}.html`;
