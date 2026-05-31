@@ -7,22 +7,23 @@ import { marked } from 'marked';
 const env = nunjucks.configure('templates', { autoescape: true });
 
 // Read command-line arguments
-const [,, template, sheet] = process.argv;
+const [,, template, workspace, sheet] = process.argv;
 
 if (!sheet) {
-  console.error("Usage: node build_html.mjs <template> <sheet>");
+  console.error("Usage: node build_html.mjs <template> <sheet> <workspace>");
   process.exit(1);
 }
 
 // Add a filter that reads a Markdown file and converts it to HTML
 env.addFilter("readmd", function (filename) {
-  const md = fs.readFileSync(`data/text/${sheet}/${filename}`, "utf8");
+  const md = fs.readFileSync(`data/${workspace}/text/${filename}`, "utf8");
   return marked(md);
 });
 
 // Load JSON data
-const inputJson = `data/${sheet}.json`;
-const data = JSON.parse(fs.readFileSync(inputJson, "utf8"));
+const inputJson = `data/${workspace}/${sheet}.json`;
+const sheetData = JSON.parse(fs.readFileSync(inputJson, "utf8"));
+const data = { sheet: sheetData, workspace };
 
 // Render the template
 const html = nunjucks.render(`${template}.njk`, data);
