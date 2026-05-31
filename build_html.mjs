@@ -16,7 +16,7 @@ if (!sheet) {
 
 // Add a filter that reads a Markdown file and converts it to HTML
 env.addFilter("readmd", function (filename) {
-  const md = fs.readFileSync(`data/cards/${sheet}/${filename}`, "utf8");
+  const md = fs.readFileSync(`data/text/${sheet}/${filename}`, "utf8");
   return marked(md);
 });
 

@@ -5,13 +5,13 @@
         <link rel="stylesheet" href="./style.css">
         {% for card in cards %}
             {% if card.image %}
-                <link rel="preload" as="image" href="../images/{{ card.image }}">
+                <link rel="preload" as="image" href="../data/images/{{ card.image }}">
             {% endif %}
         {% endfor %}
         <style>
             {% for card in cards %}
                 .box.card_{{loop.index}}.front .card{
-                    background-image: url('../images/{{ card.image }}');
+                    background-image: url('../data/images/{{ card.image }}');
                     {% if card.image_size %}
                         background-size: {{card.image_size}}
                         ;
