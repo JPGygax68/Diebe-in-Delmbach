@@ -1,0 +1,58 @@
+{
+    "cards": [
+        {
+            "title": "Spieler 1",
+            "text": "____________________",
+            "image": "player1.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Spieler 2",
+            "text": "____________________",
+            "image": "player2.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Spieler 3",
+            "text": "____________________",
+            "image": "player3.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Spieler 4",
+            "text": "____________________",
+            "image": "player4.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Spieler 5",
+            "text": "____________________",
+            "image": "player5.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Spieler 6",
+            "text": "____________________",
+            "image": "player6.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Spieler 7",
+            "text": "____________________",
+            "image": "player7.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Spieler 8",
+            "text": "____________________",
+            "image": "player8.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Spieler 9",
+            "text": "____________________",
+            "image": "player9.png",
+            "image_size": "60%"
+        }
+    ]
+}

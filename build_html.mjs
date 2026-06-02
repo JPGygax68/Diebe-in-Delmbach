@@ -28,8 +28,10 @@ const data = { sheet: sheetData, workspace };
 // Render the template
 const html = nunjucks.render(`${template}.njk`, data);
 
-// Write output to "dist" directory, using the input JSON filename with .html extension
-const outputHtml = `dist/${sheet}.html`;
+// Write output to "dist" directory, using the workspace subdirectory and input JSON filename with .html extension
+const outputDir = `dist/${workspace}`;
+fs.mkdirSync(outputDir, { recursive: true });
+const outputHtml = `${outputDir}/${sheet}.html`;
 fs.writeFileSync(outputHtml, html, "utf8");
 
 console.log(`Rendered ${outputHtml}`);
