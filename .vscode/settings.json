@@ -4,7 +4,7 @@
             // Match scss files except names start with `_`.
             //"match": "(.*\\.(html|scss))|Makefile$",
             //"notMatch": "[\\\\\\/]_[^\\\\\\/]*\\.scss$",
-            "command": "make all",
+            "command": "./build",
             "runIn": "terminal",
             "runningStatusMessage": "Making...",
             "finishStatusMessage": "Made."

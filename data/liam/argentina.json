@@ -1,58 +1,58 @@
 {
     "cards": [
         {
-            "title": "Spieler 1",
+            "title": "",
             "text": "____________________",
             "image": "player1.png",
-            "image_size": "60%"
+            "image_size": "80%"
         },
         {
-            "title": "Spieler 2",
+            "title": "",
             "text": "____________________",
             "image": "player2.png",
-            "image_size": "60%"
+            "image_size": "80%"
         },
         {
-            "title": "Spieler 3",
+            "title": "",
             "text": "____________________",
             "image": "player3.png",
-            "image_size": "60%"
+            "image_size": "80%"
         },
         {
-            "title": "Spieler 4",
+            "title": "",
             "text": "____________________",
             "image": "player4.png",
-            "image_size": "60%"
+            "image_size": "80%"
         },
         {
-            "title": "Spieler 5",
+            "title": "",
             "text": "____________________",
             "image": "player5.png",
-            "image_size": "60%"
+            "image_size": "80%"
         },
         {
-            "title": "Spieler 6",
+            "title": "",
             "text": "____________________",
             "image": "player6.png",
-            "image_size": "60%"
+            "image_size": "80%"
         },
         {
-            "title": "Spieler 7",
+            "title": "",
             "text": "____________________",
             "image": "player7.png",
-            "image_size": "60%"
+            "image_size": "80%"
         },
         {
-            "title": "Spieler 8",
+            "title": "",
             "text": "____________________",
             "image": "player8.png",
-            "image_size": "60%"
+            "image_size": "80%"
         },
         {
-            "title": "Spieler 9",
+            "title": "",
             "text": "____________________",
             "image": "player9.png",
-            "image_size": "60%"
+            "image_size": "80%"
         }
     ]
 }
