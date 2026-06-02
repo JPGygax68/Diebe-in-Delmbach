@@ -10,7 +10,7 @@ const env = nunjucks.configure('templates', { autoescape: true });
 const [,, template, workspace, sheet] = process.argv;
 
 if (!sheet) {
-  console.error("Usage: node build_html.mjs <template> <sheet> <workspace>");
+  console.error("Usage: node build_html.mjs <template> <sheet> <workspace> <outputDir>");
   process.exit(1);
 }
 
@@ -28,10 +28,8 @@ const data = { sheet: sheetData, workspace };
 // Render the template
 const html = nunjucks.render(`${template}.njk`, data);
 
-// Write output to "dist" directory, using the workspace subdirectory and input JSON filename with .html extension
-const outputDir = `dist/${workspace}`;
-fs.mkdirSync(outputDir, { recursive: true });
-const outputHtml = `${outputDir}/${sheet}.html`;
+// Write output to the specified directory with the input JSON filename and .html extension
+const outputHtml = `tmp/${sheet}.html`;
 fs.writeFileSync(outputHtml, html, "utf8");
 
 console.log(`Rendered ${outputHtml}`);

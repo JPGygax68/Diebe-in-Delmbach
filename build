@@ -1,7 +1,9 @@
 #!/bin/bash
 
-sass templates/style.scss dist/delmbach/style.css
+mkdir -p tmp
 
+sass templates/style.scss tmp/style.css
 node build_html.mjs cards_3x3_a4 delmbach coin_piles
 
-weasyprint dist/delmbach/coin_piles.html dist/delmbach/coin_piles.pdf
+mkdir -p dist/delmbach
+weasyprint tmp/coin_piles.html dist/delmbach/coin_piles.pdf
