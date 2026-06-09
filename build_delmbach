@@ -1,9 +1,11 @@
 #!/bin/bash
 
+export SHEET=sheet1
+
 mkdir -p tmp
 
 sass templates/style.scss tmp/style.css
-node build_html.mjs cards_3x3_a4 delmbach coin_piles
+node build_html.mjs cards_3x3_a4 delmbach $SHEET
 
 mkdir -p dist/delmbach
-weasyprint tmp/coin_piles.html dist/delmbach/coin_piles.pdf
+weasyprint tmp/${SHEET}.html dist/delmbach/${SHEET}.pdf

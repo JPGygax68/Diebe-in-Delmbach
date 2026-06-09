@@ -1,0 +1,3 @@
+Für die Verlobung mit seiner zukünftigen Frau Hilde hat sich Haldir Eisenbart von einem Magier ein besonderes Ringpaar anfertigen lassen: Der Träger des einen Rings spürt stets, ob sich der andere Ring in der Nähe befindet (Distanz < 50m). 
+
+Und wenn das einmal nicht der Fall sein sollte, haben beide Ringe eine zweite Funktion: sie können ihren Trägern die Richtung zeigen, in der sich der andere Ring befindet. Dies funktioniert über grosse Distanzen, aber maximal zweimal pro Tag.
