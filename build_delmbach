@@ -1,11 +1,13 @@
 #!/bin/bash
 
-export SHEET=sheet1
+export SHEET=npc_heroes
 
 mkdir -p tmp
 
-sass templates/style.scss tmp/style.css
-node build_html.mjs cards_3x3_a4 delmbach $SHEET
+#sass templates/style.scss tmp/style.css
+#node build_html.mjs cards_3x3_a4 delmbach $SHEET
+sass templates/style_2x2_a4.scss tmp/style_2x2_a4.css
+node build_html.mjs cards_2x2_a4 delmbach $SHEET
 
 mkdir -p dist/delmbach
 weasyprint tmp/${SHEET}.html dist/delmbach/${SHEET}.pdf

@@ -1,0 +1,179 @@
+// --- 1. Variables ---
+$card-w: 95mm;
+$card-h: $card-w*(1536/1024);
+$bleed: 1.5mm;
+$safe-gap: 50mm; // This is now just a spacer, not a clip boundary
+$tick-len: $bleed;
+$tick-thick: 0.5pt;
+$printer-margin: 5mm; // Adjust based on your printer's non-printable area
+
+// Total Card Size
+$total-w: $card-w + (2 * $bleed);
+$total-h: $card-h + (2 * $bleed);
+
+// --- 2. The Fix: Zero out the @page clipping ---
+@page {
+  size: A4;
+  margin: 0mm; // Removes the browser's clipping "window"
+}
+
+html,
+body {
+  font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+  // This padding replaces the @page margin safely
+  //padding-top: $safe-gap; 
+}
+
+.page {
+  background-color: rgba(250, 240, 240);
+  margin: $printer-margin;
+  display: grid;
+  grid-template-columns: repeat(2, #{$total-w});
+  grid-template-rows: repeat(2, #{$total-h});
+  // THIS is the "magic" for distribution
+  justify-content: space-between; // Distributes extra horizontal space
+  align-content: space-between; // Distributes extra vertical space
+  overflow: visible;
+
+  // MANDATORY: The container must be larger than the content
+  // A4 is 297mm. If your rows are 3.5in each, you have extra space.
+  width: calc(210mm - (#{$printer-margin} * 2));
+  height: calc(297mm - (#{$printer-margin} * 2));
+
+  position: relative;
+
+  // Ensure we're on a new page for each .page element
+  page-break-after: always;
+}
+
+.box {
+  position: relative;
+  width: $total-w;
+  height: $total-h;
+  background: transparent; // CRITICAL: No background here!
+
+  // LAYER 1: The Horizontal Ticks
+  &::before {
+    content: "";
+    //background-color: #0af8;
+    position: absolute;
+    // Stretch horizontally past the card edges
+    left: #{-$tick-len};
+    width: calc(100% + 2*$tick-len);
+    // Align exactly with the top/bottom trim lines
+    top: $bleed;
+    height: $card-h;
+
+    border-top: $tick-thick solid black;
+    border-bottom: $tick-thick solid black;
+  }
+
+  // LAYER 2: The Vertical Ticks
+  &::after {
+    content: "";
+    //background-color: #fa08;
+    position: absolute;
+    // Stretch vertically past the card edges
+    top: #{-$tick-len};
+    height: calc(100% + 2*$tick-len);
+    // Align exactly with the top/bottom trim lines
+    left: $bleed;
+    width: $card-w;
+
+    border-left: $tick-thick solid black;
+    border-right: $tick-thick solid black;
+    z-index: 1; // Lowest
+  }
+
+  .card {
+    position: relative;
+    width: $total-w;
+    height: $total-h;
+    overflow: visible;
+    z-index: 10;
+    background-color: white; // Fallback color
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; // Scales the image to fill the 2.7" x 3.7" area
+
+    .content {
+      position: absolute;
+      box-sizing: border-box;
+      // An inner box that is actually a super-thin line that helps with cutting accuracy
+      //border: 0.1pt solid rgba(0, 0, 0, 0.3);
+      padding: 3mm;
+      top: $bleed;
+      left: $bleed;
+      width: #{$card-w};
+      height: #{$card-h};
+      z-index: 1;
+
+      //background: #0f48;
+
+      // Add your text styling here
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &.back .content {
+
+    // This is for the Markdown text on the back. It is smaller and left-aligned.
+
+    display: block;
+    font-size: 85%;
+    text-align: start;
+
+    em {
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0.4em 0 0.1em 0;
+    }
+
+    p,
+    ul {
+      margin: 0.2em 0;
+    }
+
+    ul {
+      padding-left: 1.5em;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+
+      td {
+        vertical-align: top;
+        padding-right: 1em;
+      }
+    }
+
+    .stats {
+      font-size: 80%;
+
+      .attributes {
+        table td {
+          padding: 0.1em 0.4em;
+          &:nth-child(3), &:nth-child(6) {
+            padding-right: 0.5em;
+            border-right: 0.05em solid gray;
+          }
+          &:nth-child(4), &:nth-child(7) {
+            padding-left: 0.5em;
+          }
+        }
+      }
+    }
+  }
+}

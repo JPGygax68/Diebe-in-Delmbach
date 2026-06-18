@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./style_2x2_a4.css">
+        {% for card in sheet.cards %}
+            {% if card.image %}
+                <link rel="preload" as="image" href="../data/{{ workspace }}/images/{{ card.image }}">
+            {% endif %}
+        {% endfor %}
+        <style>
+            {% for card in sheet.cards %}
+                .box.card_{{loop.index}}.front .card{
+                    background-image: url('../data/{{ workspace }}/images/{{ card.image }}');
+                    {% if card.image_size %}
+                        background-size: {{card.image_size}}
+                        ;
+                    {% endif %}
+                }
+            {% endfor %}
+        </style>
+    </head>
+    <body>
+        <div class="page front">
+            {% for card in sheet.cards %}
+                <div class="box front card_{{ loop.index }}">
+                    <div class="card">
+                        <div class="content">
+                            <h2>{{ card.title }}</h2>
+                            <p>{{ card.text }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="page back">
+            {% for row in [1, 2] %}
+                {% for col in [2, 1] %}
+                    {% set card = sheet.cards[(row - 1) * 2 + col - 1] %}
+                    {% set card_num = (row - 1) * 2 + col %}
+                    <div class="box card_{{ card_num }} {% if card.back_file %}back{% endif %} {% if card.both_sided %}front{% endif %} ">
+                        <div class="card">
+                            <div class="content">
+                                {% if card.back_file %}
+                                    {{ card.back_file | readmd | safe }}
+                                {% elif card.both_sided %}
+                                    <h2>{{ card.title }}</h2>
+                                    <p>{{ card.text }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{
+    "cards": [
+        {
+            "title": "Prillas Heilstein",
+            "text": "1d4 Heilung, 1x pro Tag",
+            "image": "Prillas healing stone.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Beregund's Kompass",
+            "text": "Hilft bei der Orientierung in der Wildnis",
+            "image": "Beregunds Kompass.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Jägerzeichen",
+            "text": "Erkenntnismagie, 1. Stufe",
+            "image": "Jägermal.png",
+            "image_size": "80%",
+            "back_file": "hunters_mark.md"
+        },
+        {
+            "title": "Haldir's Trauring",
+            "text": "\"Wo Du auch bist, ich finde den Weg zu Dir.\"",
+            "image": "Haldirs Trauring.png",
+            "image_size": "60%",
+            "back_file": "Haldirs Trauring.md"
+        }    
+    ]
+}
