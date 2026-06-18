@@ -1,10 +1,11 @@
 {
     "cards": [
         {
-            "title": "Prillas Heilstein",
-            "text": "1d4 Heilung, 1x pro Tag",
-            "image": "Prillas healing stone.png",
-            "image_size": "60%"
+            "title": "Beregund als Waldläufer",
+            "text": "Einmal Held, immer Held",
+            "image": "Beregund Waldläufer.png",
+            "image_size": "80%",
+            "back_file": "beregund_ranger.md"
         },
         {
             "title": "Beregund's Kompass",

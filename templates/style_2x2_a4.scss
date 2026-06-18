@@ -1,6 +1,6 @@
 // --- 1. Variables ---
 $card-w: 95mm;
-$card-h: $card-w*(1536/1024);
+$card-h: $card-w*(calc(1536/1024));
 $bleed: 1.5mm;
 $safe-gap: 50mm; // This is now just a spacer, not a clip boundary
 $tick-len: $bleed;
