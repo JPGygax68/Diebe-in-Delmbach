@@ -1,35 +1,24 @@
-import fs from 'fs';
-import nunjucks from 'nunjucks';
-import * as sass from 'sass';
-import { marked } from 'marked';
+import path from "path";
+import { renderSheetToHtml } from "./render_sheet.mjs";
 
-// Configure Nunjucks to use the 'templates' directory
-const env = nunjucks.configure('templates', { autoescape: true });
+const [, , template, workspace, sheetArg] = process.argv;
 
-// Read command-line arguments
-const [,, template, workspace, sheet] = process.argv;
-
-if (!sheet) {
-  console.error("Usage: node build_html.mjs <template> <sheet> <workspace> <outputDir>");
+if (!template || !workspace || !sheetArg) {
+  console.error("Usage: node build_html.mjs <template> <workspace> <sheet-or-path>");
   process.exit(1);
 }
 
-// Add a filter that reads a Markdown file and converts it to HTML
-env.addFilter("readmd", function (filename) {
-  const md = fs.readFileSync(`data/${workspace}/text/${filename}`, "utf8");
-  return marked(md);
+const looksLikePath = sheetArg.includes("/") || sheetArg.includes("\\") || sheetArg.endsWith(".json") || sheetArg.endsWith(".yaml") || sheetArg.endsWith(".yml");
+const sheetPath = looksLikePath ? sheetArg : path.join("data", workspace, `${sheetArg}.json`);
+const outputName = path.basename(sheetPath, path.extname(sheetPath));
+const outputHtml = path.join("tmp", `${outputName}.html`);
+
+renderSheetToHtml({
+  template,
+  sheetPath,
+  backsDir: path.join("data", workspace, "text"),
+  imagesDir: path.join("data", workspace, "images"),
+  outputHtmlPath: outputHtml
 });
-
-// Load JSON data
-const inputJson = `data/${workspace}/${sheet}.json`;
-const sheetData = JSON.parse(fs.readFileSync(inputJson, "utf8"));
-const data = { sheet: sheetData, workspace };
-
-// Render the template
-const html = nunjucks.render(`${template}.njk`, data);
-
-// Write output to the specified directory with the input JSON filename and .html extension
-const outputHtml = `tmp/${sheet}.html`;
-fs.writeFileSync(outputHtml, html, "utf8");
 
 console.log(`Rendered ${outputHtml}`);

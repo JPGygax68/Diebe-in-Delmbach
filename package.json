@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "build.js",
+  "bin": {
+    "sheet-exporter": "./sheet-exporter.mjs"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +16,7 @@
   "author": "Jean-Pierre Gygax",
   "dependencies": {
     "marked": "^17.0.5",
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "yaml": "^2.8.1"
   }
 }
