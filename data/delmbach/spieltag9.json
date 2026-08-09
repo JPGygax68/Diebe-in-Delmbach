@@ -1,0 +1,66 @@
+{
+    "cards": [
+        {
+            "title": "'Knochenkumpel'",
+            "text": "Ein unheimlicher Ring",
+            "image": "knochenkumpel.png",
+            "image_size": "80%",
+            "back_file": "knochenkumpel.md"
+        },
+        {
+            "title": "Beregund's Kompass",
+            "text": "Hilft bei der Orientierung in der Wildnis",
+            "image": "Beregunds Kompass.png",
+            "image_size": "60%"
+        },
+        {
+            "title": "Jägerzeichen",
+            "text": "Erkenntnismagie, 1. Stufe",
+            "image": "Jägermal.png",
+            "image_size": "80%",
+            "back_file": "hunters_mark.md"
+        },
+        {
+            "title": "Haldir's Trauring",
+            "text": "\"Wo Du auch bist, ich finde den Weg zu Dir.\"",
+            "image": "Haldirs Trauring.png",
+            "image_size": "60%",
+            "back_file": "Haldirs Trauring.md"
+        },
+        {
+            "title": "Feuerodem",
+            "text": "Spezialfähigkeit von roten Drachengeborenen",
+            "image": "breath_weapon_fire.png",
+            "image_size": "80%",
+            "back_file": "breath_weapon_fire.md"
+        },
+        {
+            "title": "1 Kupferstück",
+            "text": "Manchmal hilft auch Kleingeld weiter",
+            "image": "copper_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Goldstück",
+            "text": "Gold - wer braucht es nicht?",
+            "image": "gold_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Silberstück",
+            "text": "Für die kleinen Dinge des Lebens",
+            "image": "silver_coin.png",
+            "image_size": "90%",
+            "both_sided": true
+        },
+        {
+            "title": "1 Kupferstück",
+            "text": "Manchmal hilft auch Kleingeld weiter",
+            "image": "copper_coin.png",
+            "image_size": "80%",
+            "both_sided": true
+        }
+    ]
+}

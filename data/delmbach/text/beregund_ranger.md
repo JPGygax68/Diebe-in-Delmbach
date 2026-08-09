@@ -2,6 +2,8 @@
 
 ## Beregund, der Beschützer von Delmbach
 
+### Waldläufer Stufe ~3 (früher mal Stufe 6)
+
 <div class="attributes">
 
 |       |     |     |       |     |     |       |     |     |
@@ -10,15 +12,15 @@
 | *INT* | 11  | +0  | *WEI* | 14  | +2  | *CHA* | 10  | +0  |
 </div>
 
-|                 |                                                                        |
-| --------------- | ---------------------------------------------------------------------- |
-| *Rüstungskl.*   | 14 (Lederrüstung)                                                      |
-| *Trefferpkt.*   | 24 (3W10+6)                                                            |
-| *Bewegung*      | 9 m (30 ft)                                                            |
-| *Rettungswürfe* | GEW +4, WEI + 4                                                        |
-| *Fertigkeiten*  | Überleben + 6, Heimlichkeit +4, Wahrnehmung +4, Tierkunde +4, Natur +2 |
-| *Sinne*         | passive Wahrnehmung 14                                                 |
-| *Sprachen*      | Gemeinsprache, Elfisch                                                 |
+|                 |                                                                       |
+| --------------- | --------------------------------------------------------------------- |
+| *Rüstungskl.*   | 14 (Lederrüstung)                                                     |
+| *Trefferpkt.*   | 24 (3W10+6)                                                           |
+| *Bewegung*      | 9 m (30 ft)                                                           |
+| *Rettungswürfe* | GEW +4, WEI +4                                                        |
+| *Fertigkeiten*  | Überleben +6, Heimlichkeit +4, Wahrnehmung +4, Tierkunde +4, Natur +2 |
+| *Sinne*         | passive Wahrnehmung 14                                                |
+| *Sprachen*      | Gemeinsprache, Elfisch                                                |
 
 #### Merkmale
 
@@ -33,8 +35,6 @@
 - *Zauberplätze*: 3× Grad 1.
 - *Vorbereitete Zauber (3)*: Jägerzeichen, Wunden heilen, Geringe Heilung
 
-(Er hat früher mehr gekonnt, aber vieles „verlernt“)
-
 #### Ausrüstung
 
 - *Langbogen*: +6 zum Treffen (GEW+2, Kompetenz +2, Bogenschiessen +2); Reichweite 50m/200m; Treffer: 1W8+2 Stichschaden
@@ -44,5 +44,5 @@
 
 #### Held bei Bedarf
 
-Beregund war mal Waldläufer, und wenn Delmbach in Gefahr ist und nicht genug Helden da sind, hilft er mit! Allerdings ist es schon eine Weile her seit seinem letzten Abenteuer - "ich bin ein bisschen rostig", wie er selbst sagt. (Früher mal Stufe 6, jetzt eher Stufe 3).
+Beregund war mal Waldläufer, und wenn Delmbach in Gefahr ist und nicht genug Helden da sind, hilft er mit! Allerdings ist es schon eine Weile her seit seinem letzten Abenteuer - "ich bin ein bisschen rostig", sagt er. (Früher mal Stufe 6, jetzt eher Stufe 3).
 </div>
