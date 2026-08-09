@@ -1,17 +1,17 @@
 {
-  "name": "printshop_diebe_in_delmbach",
+  "name": "print_shop",
   "version": "1.0.0",
   "description": "",
   "main": "build.js",
   "bin": {
-    "sheet-exporter": "./sheet-exporter.mjs"
+    "mkplayingcards": "./sheet-exporter.mjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JPGygax68/Diebe-in-Delmbach.git"
+    "url": "git+https://github.com/JPGygax68/print_shop.git"
   },
   "author": "Jean-Pierre Gygax",
   "dependencies": {
