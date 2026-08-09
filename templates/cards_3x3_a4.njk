@@ -2,16 +2,16 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="{{ stylesheet_href or './style.css' }}">
         {% for card in sheet.cards %}
             {% if card.image %}
-                <link rel="preload" as="image" href="../data/{{ workspace }}/images/{{ card.image }}">
+                <link rel="preload" as="image" href="{{ card.image_href or ('../data/' ~ workspace ~ '/images/' ~ card.image) }}">
             {% endif %}
         {% endfor %}
         <style>
             {% for card in sheet.cards %}
                 .box.card_{{loop.index}}.front .card{
-                    background-image: url('../data/{{ workspace }}/images/{{ card.image }}');
+                    background-image: url('{{ card.image_href or ('../data/' ~ workspace ~ '/images/' ~ card.image) }}');
                     {% if card.image_size %}
                         background-size: {{card.image_size}}
                         ;
