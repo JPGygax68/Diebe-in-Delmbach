@@ -4,7 +4,7 @@
   "description": "",
   "main": "build.js",
   "bin": {
-    "mkplayingcards": "./sheet-exporter.mjs"
+    "mkplayingcards": "./mkplayingcards.mjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,7 @@
   "dependencies": {
     "marked": "^17.0.5",
     "nunjucks": "^3.2.4",
+    "sass": "^1.102.0",
     "yaml": "^2.8.1"
   }
 }

@@ -7,7 +7,7 @@ sass templates/style.scss tmp/style.css
 # A4 3x3
 
 # export SHEET=npc_heroes
-export SHEET=spieltag9
+export SHEET=goblins
 node build_html.mjs cards_3x3_a4 delmbach $SHEET
 
 # A4 2x2

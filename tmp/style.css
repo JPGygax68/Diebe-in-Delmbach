@@ -102,21 +102,22 @@ body {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.box.back .content table td {
+.box.back .content table td,
+.box.back .content table th {
   vertical-align: top;
   padding-right: 1em;
 }
 .box.back .content .stats {
   font-size: 80%;
 }
-.box.back .content .stats .attributes table td {
+.box.back .content .stats .attributes table td, .box.back .content .stats .attributes table th {
   padding: 0.1em 0.4em;
 }
-.box.back .content .stats .attributes table td:nth-child(3), .box.back .content .stats .attributes table td:nth-child(6) {
+.box.back .content .stats .attributes table td:nth-child(3), .box.back .content .stats .attributes table td:nth-child(6), .box.back .content .stats .attributes table th:nth-child(3), .box.back .content .stats .attributes table th:nth-child(6) {
   padding-right: 0.5em;
   border-right: 0.05em solid gray;
 }
-.box.back .content .stats .attributes table td:nth-child(4), .box.back .content .stats .attributes table td:nth-child(7) {
+.box.back .content .stats .attributes table td:nth-child(4), .box.back .content .stats .attributes table td:nth-child(7), .box.back .content .stats .attributes table th:nth-child(4), .box.back .content .stats .attributes table th:nth-child(7) {
   padding-left: 0.5em;
 }
 
