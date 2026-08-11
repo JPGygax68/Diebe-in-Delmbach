@@ -1,4 +1,8 @@
-// --- 1. Variables ---
+@use "common";
+
+@include common.global-styles;
+
+// --- Variables ---
 $card-w: 95mm;
 $card-h: $card-w*(calc(1536/1024));
 $bleed: 1.5mm;
@@ -10,21 +14,6 @@ $printer-margin: 5mm; // Adjust based on your printer's non-printable area
 // Total Card Size
 $total-w: $card-w + (2 * $bleed);
 $total-h: $card-h + (2 * $bleed);
-
-// --- 2. The Fix: Zero out the @page clipping ---
-@page {
-  size: A4;
-  margin: 0mm; // Removes the browser's clipping "window"
-}
-
-html,
-body {
-  font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
-  margin: 0;
-  padding: 0;
-  // This padding replaces the @page margin safely
-  //padding-top: $safe-gap; 
-}
 
 .page {
   background-color: rgba(250, 240, 240);
@@ -125,7 +114,7 @@ body {
     // This is for the Markdown text on the back. It is smaller and left-aligned.
 
     display: block;
-    font-size: 50%;
+    font-size: 85%;
     text-align: start;
 
     em {
@@ -159,21 +148,6 @@ body {
       }
     }
 
-    .stats {
-      font-size: 80%;
-
-      .attributes {
-        table td {
-          padding: 0.1em 0.4em;
-          &:nth-child(3), &:nth-child(6) {
-            padding-right: 0.5em;
-            border-right: 0.05em solid gray;
-          }
-          &:nth-child(4), &:nth-child(7) {
-            padding-left: 0.5em;
-          }
-        }
-      }
-    }
+    @include common.dnd-stats;
   }
 }

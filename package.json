@@ -1,12 +1,13 @@
 {
   "name": "print_shop",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "build.js",
   "bin": {
     "mkplayingcards": "./mkplayingcards.mjs"
   },
   "scripts": {
+    "preinstall": "sass templates/style.scss dist/style.css && sass templates/style_2x2_a4.scss dist/style_2x2_a4.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,9 @@
   "dependencies": {
     "marked": "^17.0.5",
     "nunjucks": "^3.2.4",
-    "sass": "^1.102.0",
     "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "sass": "1.102.0"
   }
 }

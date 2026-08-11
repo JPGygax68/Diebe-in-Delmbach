@@ -24,8 +24,8 @@ function readSheet(sheetPath) {
 
 function resolveStylesheetHref(template) {
   const styleByTemplate = {
-    cards_3x3_a4: "tmp/style.css",
-    cards_2x2_a4: "tmp/style_2x2_a4.css"
+    cards_3x3_a4: "dist/style.css",
+    cards_2x2_a4: "dist/style_2x2_a4.css"
   };
 
   const relativePath = styleByTemplate[template];

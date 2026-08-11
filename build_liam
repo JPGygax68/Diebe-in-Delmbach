@@ -1,9 +1,0 @@
-#!/bin/bash
-
-mkdir -p tmp
-
-sass templates/style.scss tmp/style.css
-node build_html.mjs cards_3x3_a4 liam argentina
-
-mkdir -p dist/liam
-weasyprint tmp/argentina.html dist/liam/argentina.pdf
